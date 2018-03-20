@@ -1,22 +1,22 @@
 // @flow
 import { compose, lifecycle } from 'recompose'
 import { connect } from 'react-redux'
-import { fetchPopularFilms, getFilms } from '../modules/films'
+import { fetchPopularMovies, getMovies } from '../modules/movies/index'
 import Home from '../components/Home'
 
 const mapStateToProps = state => {
-  const films = getFilms(state)
-  return { films }
+  const movies = getMovies(state)
+  return { movies }
 }
 
-const withFilmsData = connect(mapStateToProps, { fetchPopularFilms })
+const withMoviesData = connect(mapStateToProps, { fetchPopularMovies })
 
-const fetchPopularFilmsOnMount = lifecycle({
+const fetchPopularMoviesOnMount = lifecycle({
   componentDidMount() {
-    this.props.fetchPopularFilms()
+    this.props.fetchPopularMovies()
   }
 })
 
-const HomeEnhancer = compose(withFilmsData, fetchPopularFilmsOnMount)
+const HomeEnhancer = compose(withMoviesData, fetchPopularMoviesOnMount)
 
 export default HomeEnhancer(Home)
