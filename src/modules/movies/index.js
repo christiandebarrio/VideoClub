@@ -1,6 +1,5 @@
 // @flow
 import { SET_MOVIES } from './actionsTypes'
-
 export * from './actions'
 export * from './selectors'
 
