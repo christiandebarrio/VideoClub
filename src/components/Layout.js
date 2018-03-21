@@ -5,12 +5,13 @@ import logo from '../logo.svg'
 
 const Layout = (props: Object) => (
   <div className='App'>
-    <header className='App-header'>
+    <header>
       <Link to='/'>
         <img src={logo} className='App-logo' alt='logo' />
       </Link>
     </header>
     {props.children}
+    <footer />
   </div>
 )
 

@@ -10,6 +10,18 @@ body {
   margin-top: 12px;
 }
 
+header {
+  background-color: #081c24;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+footer {
+  height: 300px;
+  background-color: #081c24;
+}
+
 /* Card */
 .movie-card-list {
   position: relative;
