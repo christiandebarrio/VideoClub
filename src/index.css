@@ -1,5 +1,76 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  background-color: #f4f4f4;
+  color: #000;
+  font-family: 'Source Sans Pro', Arial, sans-serif;
+  font-size: 1em;
+}
+.App-logo {
+  margin-top: 12px;
+}
+
+/* Card */
+.movie-card-list {
+  position: relative;
+  padding: 40px 0 20px;
+}
+
+.movie-card-list > .title {
+  text-align: left;
+  margin-left: 2.5%;
+}
+
+.ui.card {
+  position: relative;
+  width: 46%;
+  height: 278px;
+  min-width: 320px;
+  display: inline-block;
+  margin-right: 2%;
+  margin-left: 2%;
+  margin-bottom: 10px;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ui.card > .img-wrapper {
+  width: 185px;
+  height: 278px;
+  margin: 0;
+  float: left;
+}
+
+.ui.card > .content {
+  width: 100%;
+  height: 225px;
+}
+
+.ui.card > .content > .header {
+  font-weight: 600;
+  font-size: 1.1em;
+  line-height: 1.1em;
+  float: left;
+}
+.ui.card > .content > .vote-average {
+  width: 30px;
+  height: 30px;
+  float: left;
+}
+
+.ui.card > .content > .description {
+  width: 30px;
+  height: 30px;
+  float: left;
+}
+
+.ui.card > .extra.content {
+  height: 53px;
+  padding: 16px;
+}
+
+.ui.card > .extra.content > p {
+  font-size: 0.9em;
+  font-weight: 400;
+  color: #000;
 }
