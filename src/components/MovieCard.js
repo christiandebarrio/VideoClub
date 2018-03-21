@@ -1,10 +1,15 @@
 // @flow
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 type MovieCardProps = {
   movie: Object
 }
 
-const MovieCard = (props: MovieCardProps) => <p>{props.movie.title}</p>
+const MovieCard = ({ movie }: MovieCardProps) => (
+  <div>
+    <Link to={`/movie/${movie.id}`}>{movie.title}</Link>
+  </div>
+)
 
 export default MovieCard
