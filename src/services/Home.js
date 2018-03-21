@@ -21,7 +21,10 @@ const fetchPopularMoviesOnMount = lifecycle({
 })
 
 const withOnGoToMovieDetail = withProps(props => ({
-  onGoToMovieDetail: id => () => props.history.push(`/movie/${id}`)
+  onGoToMovieDetail: id => () => {
+    props.history.push(`/movie/${id}`)
+    window.scroll(0, 0)
+  }
 }))
 
 const HomeEnhancer = compose(
