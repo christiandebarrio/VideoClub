@@ -15,6 +15,7 @@ header {
   height: 150px;
   padding: 20px;
   color: white;
+  margin-bottom: 40px;
 }
 
 footer {
@@ -37,7 +38,7 @@ footer {
   position: relative;
   width: 46%;
   height: 278px;
-  min-width: 320px;
+  min-width: 450px;
   display: inline-block;
   margin-right: 2%;
   margin-left: 2%;
@@ -46,7 +47,7 @@ footer {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.ui.card > .img-wrapper {
+.ui.card > .image {
   width: 185px;
   height: 278px;
   margin: 0;
@@ -54,31 +55,37 @@ footer {
 }
 
 .ui.card > .content {
-  width: 100%;
+  padding: 16px;
+  width: 320px;
   height: 225px;
+}
+
+.ui.card > .content > .vote-average {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
 }
 
 .ui.card > .content > .header {
   font-weight: 600;
   font-size: 1.1em;
   line-height: 1.1em;
-  float: left;
+  display: inline-block;
 }
-.ui.card > .content > .vote-average {
-  width: 30px;
-  height: 30px;
-  float: left;
+
+.ui.card > .content > .meta {
+  display: block;
 }
 
 .ui.card > .content > .description {
-  width: 30px;
-  height: 30px;
   float: left;
 }
 
 .ui.card > .extra.content {
+  width: 100%;
   height: 53px;
   padding: 16px;
+  text-align: left;
 }
 
 .ui.card > .extra.content > p {
