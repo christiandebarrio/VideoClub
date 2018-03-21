@@ -4,7 +4,8 @@ import logo from '../logo.svg'
 import MoviesList from './MoviesList'
 
 type HomeProps = {
-  movies: Array<Object>
+  movies: Array<Object>,
+  onGoToMovieDetail: number => () => void
 }
 
 const Home = (props: HomeProps) => (
@@ -13,7 +14,10 @@ const Home = (props: HomeProps) => (
       <img src={logo} className='App-logo' alt='logo' />
       <h1 className='App-title'>Welcome to React</h1>
     </header>
-    <MoviesList movies={props.movies} />
+    <MoviesList
+      movies={props.movies}
+      onGoToMovieDetail={props.onGoToMovieDetail}
+    />
   </div>
 )
 
