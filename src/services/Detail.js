@@ -2,7 +2,12 @@
 import type { AppState } from '../core/types'
 import { compose, lifecycle } from 'recompose'
 import { connect } from 'react-redux'
-import { fetchMovie, getMovieDetail } from '../modules/movies'
+import {
+  fetchMovie,
+  getMovieDetail,
+  getMovieDirector,
+  getMainCrew
+} from '../modules/movies'
 import Detail from '../components/Detail'
 import withLoadingUntilProps from './withLoadingUntilProps'
 
@@ -11,7 +16,9 @@ type RouterProps = { match: { params: { id: number } } }
 const mapStateToProps = (state: AppState, props: RouterProps): Object => {
   const id = props.match.params.id
   const movie = getMovieDetail(id, state)
-  return { id, movie }
+  const director = movie && getMovieDirector(movie)
+  const mainCrew = movie && getMainCrew(movie)
+  return { id, movie, director, mainCrew }
 }
 
 const withMovieData = connect(mapStateToProps, { fetchMovie })

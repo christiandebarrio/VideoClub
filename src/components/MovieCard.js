@@ -36,24 +36,3 @@ const MovieCard = (props: MovieCardProps) => {
 }
 
 export default MovieCard
-
-// <div>
-//   <Link to={`/movie/${movie.id}`}>{movie.title}</Link>
-// </div>
-
-// <Card onClick={props.onGoToMovieDetail(id)}>
-//   <Image src={imageSrc} />
-//   <Card.Content>
-//     <div className='vote-average'>
-//       <span>{vote_average * 10}</span>
-//     </div>
-//     <Card.Header>{title}</Card.Header>
-//     <Card.Meta>
-//       <span className='date'>Joined in 2015</span>
-//     </Card.Meta>
-//     <Card.Description>{overview}</Card.Description>
-//   </Card.Content>
-//   <Card.Content extra>
-//     <p>Mas Información...</p>
-//   </Card.Content>
-// </Card>
