@@ -11,7 +11,7 @@ type RouterProps = { match: { params: { id: number } } }
 const mapStateToProps = (state: AppState, props: RouterProps): Object => {
   const id = props.match.params.id
   const movie = getMovieDetail(id, state)
-  return { id, movie, ...movie }
+  return { id, movie }
 }
 
 const withMovieData = connect(mapStateToProps, { fetchMovie })

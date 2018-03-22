@@ -8,10 +8,12 @@ type HomeProps = {
 }
 
 const Home = (props: HomeProps) => (
-  <MoviesList
-    movies={props.movies}
-    onGoToMovieDetail={props.onGoToMovieDetail}
-  />
+  <div>
+    <MoviesList
+      movies={props.movies}
+      onGoToMovieDetail={props.onGoToMovieDetail}
+    />
+  </div>
 )
 
 export default Home

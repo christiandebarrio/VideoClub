@@ -1,7 +1,9 @@
 // @flow
 import { GET_IMAGE_URL_BASE } from '../../constants'
 
-export const getImageSrc = (urlPath: string, widthSize: number): string => {
-  const size = 'w' + widthSize
+type GetImageSrc = (urlPath: string, widthSize?: number | 'original') => string
+
+export const getImageSrc: GetImageSrc = (urlPath, widthSize = 'original') => {
+  const size = isNaN(widthSize) ? widthSize : 'w' + widthSize
   return GET_IMAGE_URL_BASE + size + urlPath
 }
