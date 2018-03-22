@@ -14,7 +14,9 @@ export const fetchPopularMovies = (): AsyncThunk => async (
   getState
 ) => {
   try {
-    const popularMoviesPath = `${API_URL}/movie/popular?api_key=${API_KEY}`
+    const languagePath = '&language=es-ES'
+    const pagePath = '&page=1'
+    const popularMoviesPath = `${API_URL}/movie/popular?api_key=${API_KEY}${languagePath}${pagePath}`
     const movies: Movies = await fetch(popularMoviesPath)
       .then(res => res.json())
       .then(json => json.results)
@@ -36,7 +38,8 @@ export const fetchMovie = (id: number): AsyncThunk => async (
   getState
 ) => {
   try {
-    const moviePath = `${API_URL}/movie/${id}?api_key=${API_KEY}`
+    const languagePath = '&language=es-ES'
+    const moviePath = `${API_URL}/movie/${id}?api_key=${API_KEY}${languagePath}`
     const movie: MovieDetail = await fetch(moviePath).then(res => res.json())
     const creditsPath = `${API_URL}/movie/${id}/credits?api_key=${API_KEY}`
     const credits: Credits = await fetch(creditsPath).then(res => res.json())
