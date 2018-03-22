@@ -24,6 +24,10 @@ footer {
   background-color: #081c24;
 }
 
+.loading {
+  height: 500px;
+}
+
 /* Card */
 .movie-card-list {
   position: relative;

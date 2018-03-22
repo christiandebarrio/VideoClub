@@ -4,7 +4,7 @@ import { compose, lifecycle } from 'recompose'
 import { connect } from 'react-redux'
 import { fetchMovie, getMovieDetail } from '../modules/movies'
 import Detail from '../components/Detail'
-import withErrorIfNotProps from './withErrorIfNotProps'
+import withLoadingUntilProps from './withLoadingUntilProps'
 
 type RouterProps = { match: { params: { id: number } } }
 
@@ -25,7 +25,7 @@ const fetchMovieOnMount = lifecycle({
 const DetailEnhancer = compose(
   withMovieData,
   fetchMovieOnMount,
-  withErrorIfNotProps('movie')
+  withLoadingUntilProps('movie')
 )
 
 export default DetailEnhancer(Detail)
