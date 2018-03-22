@@ -10,7 +10,7 @@ const Layout = (props: Object) => (
         <img src={logo} className='App-logo' alt='logo' />
       </Link>
     </header>
-    {props.children}
+    <main className='main-content'>{props.children}</main>
     <footer />
   </div>
 )
