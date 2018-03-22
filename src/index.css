@@ -6,6 +6,11 @@ body {
   font-family: 'Source Sans Pro', Arial, sans-serif;
   font-size: 1em;
 }
+
+.main-content {
+  min-height: 580px;
+}
+
 .App-logo {
   margin-top: 12px;
 }
@@ -19,9 +24,15 @@ header {
 }
 
 footer {
-  margin-top: 20px;
+  margin-top: 40px;
   height: 300px;
   background-color: #081c24;
+}
+
+.wrapper {
+  width: 96%;
+  max-width: 1140px;
+  margin: 0 auto;
 }
 
 .loading {
@@ -29,7 +40,202 @@ footer {
 }
 
 /* Card */
-.movie-card-list {
+
+.mycard {
+  position: relative;
+  display: block;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background: white;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.mycard-poster {
+  width: 185px;
+  float: left;
+}
+
+.mycard-content {
+  padding: 12px 12px 72px 197px;
+  text-align: left;
+  color: black;
+}
+
+.mycard-content .header .vote-average {
+  float: left;
+  color: #21d17a;
+  margin: 2px 5px 0 0;
+  font-size: 16px;
+}
+
+.mycard-content .header .title {
+  margin-bottom: 12px;
+  padding-left: 25px;
+}
+
+.mycard-content .header h3.title-text {
+  font-size: 18px;
+  padding: 0;
+  margin: 0;
+}
+
+.mycard-content .header .meta {
+  color: #878787;
+  font-size: 16px;
+}
+
+.mycard-content .more-info {
+  position: absolute;
+  bottom: 0;
+  border-top: 1px solid #e3e3e3;
+  padding: 20px 12px;
+  left: 185px;
+  right: 0;
+}
+
+@media screen and (max-width: 1000px) {
+  .movie-card-list .mycard {
+    width: 100%;
+    margin: 20px 0;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .movie-card-list:after {
+    clear: both;
+    content: '';
+    display: table;
+  }
+
+  .movie-card-list .mycard {
+    width: 48%;
+    margin: 20px 1%;
+    display: inline-block;
+    vertical-align: top;
+  }
+}
+
+/* Detail */
+.detail-wrapper {
+  position: relative;
+}
+
+.jumbo {
+  position: relative;
+  background-color: #000;
+  color: white;
+  padding: 50px 0;
+  margin-bottom: 40px;
+  overflow: hidden;
+}
+
+.jumbo:after {
+  clear: both;
+  content: '';
+  display: table;
+}
+
+.jumbo .wrapper {
+  position: relative;
+  z-index: 2;
+}
+
+.jumbo-background {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  min-height: 100%;
+  height: auto;
+  min-width: 100%;
+  width: auto;
+  max-width: none;
+  opacity: 0.2;
+}
+
+.jumbo-content {
+  text-align: left;
+}
+
+.jumbo-content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.jumbo-content-title {
+  font-size: 34px;
+  margin-bottom: 20px;
+}
+.jumbo-content-title .date {
+  font-size: 28px;
+  margin-left: 6px;
+  font-weight: normal;
+  opacity: 0.5;
+}
+
+.jumbo-actions {
+  margin-bottom: 20px;
+}
+
+.jumbo-actions li {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 16px;
+}
+
+.jumbo-actions .vote {
+  font-size: 26px;
+  color: #21d17a;
+}
+
+.jumbo-title {
+  font-size: 22px;
+}
+
+.jumbo-description {
+  margin-bottom: 20px;
+}
+
+.jumbo-description p {
+  font-size: 18px;
+}
+
+.jumbo-team li {
+  display: inline-block;
+  vertical-align: top;
+  padding-right: 20px;
+  min-width: 33.33%;
+  margin-bottom: 14px;
+  font-size: 15px;
+}
+
+.jumbo-team li .name {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 4px;
+  font-size: 16px;
+}
+
+@media screen and (max-width: 850px) {
+  .jumbo-poster {
+    margin: 0 auto 40px;
+  }
+}
+
+@media screen and (min-width: 850px) {
+  .jumbo-content {
+    padding-left: 340px;
+  }
+  .jumbo-poster {
+    float: left;
+  }
+}
+
+/* .jumbo > img {
+  opacity: 0.1;
+} */
+
+/* .movie-card-list {
   position: relative;
 }
 
@@ -92,14 +298,14 @@ footer {
   text-align: left;
 }
 
-.ui.card > .extra.content > p {
+.ui.card .extra.content > p {
   font-size: 0.9em;
   font-weight: 400;
   color: #000;
-}
+} */
 
 /* detail */
-.detail-wrapper {
+/* .detail-wrapper {
   position: relative;
 }
 
@@ -110,6 +316,5 @@ footer {
 }
 
 .jumbo > img {
-  height: 100%;
   opacity: 0.2;
-}
+} */
