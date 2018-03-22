@@ -8,7 +8,7 @@ import {
   getMovieDirector,
   getMainCrew
 } from '../modules/movies'
-import Detail from '../components/Detail'
+import MovieDetail from '../components/MovieDetail'
 import withLoadingUntilProps from './withLoadingUntilProps'
 
 type RouterProps = { match: { params: { id: number } } }
@@ -35,4 +35,4 @@ const DetailEnhancer = compose(
   withLoadingUntilProps('movie')
 )
 
-export default DetailEnhancer(Detail)
+export default DetailEnhancer(MovieDetail)

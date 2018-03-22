@@ -3,7 +3,7 @@ import type { AppState } from '../core/types'
 import { compose, lifecycle, withProps } from 'recompose'
 import { connect } from 'react-redux'
 import { fetchPopularMovies, getMovies } from '../modules/movies'
-import Home from '../components/Home'
+import MoviesList from '../components/MoviesList'
 import withLoadingUntilProps from './withLoadingUntilProps'
 
 const mapStateToProps = (state: AppState): Object => {
@@ -34,4 +34,4 @@ const HomeEnhancer = compose(
   withOnGoToMovieDetail
 )
 
-export default HomeEnhancer(Home)
+export default HomeEnhancer(MoviesList)

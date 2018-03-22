@@ -1,15 +1,15 @@
 import React from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import Home from './services/Home'
-import Detail from './services/Detail'
+import MoviesList from './services/MoviesList'
+import MovieDetail from './services/MovieDetail'
 import Layout from './components/Layout'
 
 const Router = props => (
   <BrowserRouter>
     <Layout>
       <Switch>
-        <Route exact path='/' component={Home} />
-        <Route exact path='/movie/:id' component={Detail} />
+        <Route exact path='/' component={MoviesList} />
+        <Route exact path='/movie/:id' component={MovieDetail} />
       </Switch>
     </Layout>
   </BrowserRouter>
