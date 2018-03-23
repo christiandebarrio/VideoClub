@@ -2,15 +2,24 @@
 import type { Movie } from '../modules/movies/types'
 import React from 'react'
 import { getImageSrc } from '../modules/images/utils'
+import { formatMovieCardDate } from '../core/dateFormater'
 type MovieCardProps = {
   movie: Movie,
   onGoToMovieDetail: number => () => void
 }
 
 const MovieCard = (props: MovieCardProps) => {
-  const { id, title, poster_path, overview, vote_average } = props.movie
+  const {
+    id,
+    title,
+    poster_path,
+    overview,
+    vote_average,
+    release_date
+  } = props.movie
   const imageWidthSize = 500
   const imageSrc = getImageSrc(poster_path, imageWidthSize)
+  const dateFormated = formatMovieCardDate(new Date(release_date))
   return (
     <a className='mycard' onClick={props.onGoToMovieDetail(id)}>
       <img src={imageSrc} alt={title} className='mycard-poster' />
@@ -22,7 +31,7 @@ const MovieCard = (props: MovieCardProps) => {
           <div className='title'>
             <h3 className='title-text'>{title}</h3>
             <div className='meta'>
-              <span className='date'>Joined in 2015</span>
+              <span className='date'>{dateFormated}</span>
             </div>
           </div>
         </div>

@@ -9,17 +9,16 @@ type MoviesListProps = {
 }
 
 const MoviesList = (props: MoviesListProps) => {
-  const renderMovies = props.movies.map(movie => (
-    <MovieCard
-      movie={movie}
-      onGoToMovieDetail={props.onGoToMovieDetail}
-      key={movie.id}
-    />
-  ))
   return (
     <Container className='movie-card-list'>
       <h1 className='title'>Películas populares</h1>
-      {renderMovies}
+      {props.movies.map(movie => (
+        <MovieCard
+          movie={movie}
+          onGoToMovieDetail={props.onGoToMovieDetail}
+          key={movie.id}
+        />
+      ))}
     </Container>
   )
 }
