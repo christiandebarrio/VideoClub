@@ -12,7 +12,6 @@ const Detail = (props: DetailProps) => {
     <div className='detail-wrapper'>
       <MovieDetailHeader {...props} />
       <MovieDetailCast cast={movie.credits.cast} />
-      <p>{movie.overview}</p>
     </div>
   )
 }
