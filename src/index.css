@@ -39,6 +39,11 @@ footer {
   height: 500px;
 }
 
+.movie-card-list .title {
+  text-align: left;
+  padding-left: 12px;
+}
+
 /* Card */
 
 .mycard {
@@ -230,91 +235,3 @@ footer {
     float: left;
   }
 }
-
-/* .jumbo > img {
-  opacity: 0.1;
-} */
-
-/* .movie-card-list {
-  position: relative;
-}
-
-.movie-card-list > .title {
-  text-align: left;
-  margin-left: 2.5%;
-}
-
-.ui.card {
-  position: relative;
-  width: 46%;
-  height: 278px;
-  min-width: 450px;
-  display: inline-block;
-  margin-right: 2%;
-  margin-left: 2%;
-  margin-bottom: 10px;
-  border: none;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.ui.card > .image {
-  width: 185px;
-  height: 278px;
-  margin: 0;
-  float: left;
-}
-
-.ui.card > .content {
-  padding: 16px;
-  width: 320px;
-  height: 225px;
-}
-
-.ui.card > .content > .vote-average {
-  width: 30px;
-  height: 30px;
-  display: inline-block;
-}
-
-.ui.card > .content > .header {
-  font-weight: 600;
-  font-size: 1.1em;
-  line-height: 1.1em;
-  display: inline-block;
-}
-
-.ui.card > .content > .meta {
-  display: block;
-}
-
-.ui.card > .content > .description {
-  float: left;
-}
-
-.ui.card > .extra.content {
-  width: 100%;
-  height: 53px;
-  padding: 16px;
-  text-align: left;
-}
-
-.ui.card .extra.content > p {
-  font-size: 0.9em;
-  font-weight: 400;
-  color: #000;
-} */
-
-/* detail */
-/* .detail-wrapper {
-  position: relative;
-}
-
-.jumbo {
-  width: 100%;
-  height: 634px;
-  background-color: #000;
-}
-
-.jumbo > img {
-  opacity: 0.2;
-} */
