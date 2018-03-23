@@ -8,7 +8,7 @@ export const getMovieDetail = (id: number, state: AppState): MovieDetail =>
   state.movieDetail[id]
 
 export const getMovieDirector = (movie: MovieDetail): ?CrewPerson =>
-  movie.credits && movie.credits.crew.find(person => (person.job = 'director'))
+  movie.credits.crew.find(person => (person.job = 'director'))
 
 export const getMainCrew = (movie: MovieDetail): Array<CrewPerson> =>
-  (movie.credits && movie.credits.crew.slice(0, 6)) || []
+  movie.credits.crew.slice(0, 6) || []
