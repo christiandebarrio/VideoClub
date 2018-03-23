@@ -123,6 +123,7 @@ footer {
 /* Detail */
 .detail-wrapper {
   position: relative;
+  margin-bottom: 40px;
 }
 
 .jumbo {
@@ -234,4 +235,35 @@ footer {
   .jumbo-poster {
     float: left;
   }
+}
+
+/* Cast Card */
+
+.cast-card {
+  display: inline-block;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background: white;
+  width: 120px;
+  height: 290px;
+  margin: 0 10px;
+  overflow: hidden;
+}
+
+.cast-card-photo {
+  width: 120px;
+  height: 180px;
+}
+
+.cast-card-content {
+  padding: 10px;
+  color: black;
+}
+
+.cast-card-name {
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+
+.cast-card-character {
+  color: rgb(134, 134, 134);
 }

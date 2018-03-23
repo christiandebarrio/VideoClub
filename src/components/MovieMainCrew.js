@@ -11,8 +11,8 @@ const MovieMainCrew = (props: MovieMainCrewProps) => (
   <div className='jumbo-team'>
     <h3 className='jumbo-title'>Equipo Destacado</h3>
     <ul>
-      {props.crew.map(person => (
-        <MovieMainCrewPerson person={person} key={person.id} />
+      {props.crew.map((person, index) => (
+        <MovieMainCrewPerson person={person} key={`${index}-${person.id}`} />
       ))}
     </ul>
   </div>

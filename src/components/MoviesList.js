@@ -11,7 +11,9 @@ const MoviesList = (props: MoviesListProps) => {
   return (
     <Container className='movie-card-list'>
       <h1 className='title'>Películas populares</h1>
-      {props.movies.map(movie => <MovieCard movie={movie} key={movie.id} />)}
+      {props.movies.map((movie, index) => (
+        <MovieCard movie={movie} key={`${index}-${movie.id}`} />
+      ))}
     </Container>
   )
 }

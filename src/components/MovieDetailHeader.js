@@ -7,7 +7,7 @@ import { Icon } from 'semantic-ui-react'
 
 type DetailProps = { movie: MovieDetail, mainCrew: Array<CrewPerson> }
 
-const DetailHeader = (props: DetailProps) => {
+const MovieDetailHeader = (props: DetailProps) => {
   const {
     title,
     overview,
@@ -51,4 +51,4 @@ const DetailHeader = (props: DetailProps) => {
   )
 }
 
-export default DetailHeader
+export default MovieDetailHeader
