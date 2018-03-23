@@ -1,32 +1,32 @@
 // @flow
 import type { Movie } from '../modules/movies/types'
 import React from 'react'
-import { getImageSrc } from '../modules/images/utils'
-import { formatMovieCardDate } from '../core/dateFormater'
+import MovieCardEnhancer from '../services/MovieCard'
+
 type MovieCardProps = {
   movie: Movie,
+  posterSrc: string,
+  voteFormated: string,
+  dateFormated: string,
+  description: string,
   onGoToMovieDetail: number => () => void
 }
 
 const MovieCard = (props: MovieCardProps) => {
   const {
-    id,
-    title,
-    poster_path,
-    overview,
-    vote_average,
-    release_date
-  } = props.movie
-  const imageWidthSize = 500
-  const imageSrc = getImageSrc(poster_path, imageWidthSize)
-  const dateFormated = formatMovieCardDate(new Date(release_date))
+    movie: { id, title },
+    posterSrc,
+    voteFormated,
+    dateFormated,
+    description
+  } = props
   return (
     <a className='mycard' onClick={props.onGoToMovieDetail(id)}>
-      <img src={imageSrc} alt={title} className='mycard-poster' />
+      <img src={posterSrc} alt={title} className='mycard-poster' />
       <div className='mycard-content'>
         <div className='header'>
           <div className='vote-average'>
-            <span>{vote_average * 10}</span>
+            <span>{voteFormated}</span>
           </div>
           <div className='title'>
             <h3 className='title-text'>{title}</h3>
@@ -35,7 +35,7 @@ const MovieCard = (props: MovieCardProps) => {
             </div>
           </div>
         </div>
-        <div className='description'>{overview.substring(0, 170) + '...'}</div>
+        <div className='description'>{description}</div>
         <div className='more-info'>
           <p>Mas Información...</p>
         </div>
@@ -44,4 +44,4 @@ const MovieCard = (props: MovieCardProps) => {
   )
 }
 
-export default MovieCard
+export default MovieCardEnhancer(MovieCard)

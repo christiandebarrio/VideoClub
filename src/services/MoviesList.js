@@ -1,6 +1,6 @@
 // @flow
 import type { AppState } from '../core/types'
-import { compose, lifecycle, withProps } from 'recompose'
+import { compose, lifecycle } from 'recompose'
 import { connect } from 'react-redux'
 import { fetchPopularMovies, getMovies } from '../modules/movies'
 import MoviesList from '../components/MoviesList'
@@ -20,18 +20,10 @@ const fetchPopularMoviesOnMount = lifecycle({
   }
 })
 
-const withOnGoToMovieDetail = withProps(props => ({
-  onGoToMovieDetail: id => () => {
-    props.history.push(`/movie/${id}`)
-    window.scroll(0, 0)
-  }
-}))
-
-const HomeEnhancer = compose(
+const MoviesListEnhancer = compose(
   withMoviesData,
   fetchPopularMoviesOnMount,
-  withLoadingUntilProps('areMoviesLoaded'),
-  withOnGoToMovieDetail
+  withLoadingUntilProps('areMoviesLoaded')
 )
 
-export default HomeEnhancer(MoviesList)
+export default MoviesListEnhancer(MoviesList)

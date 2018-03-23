@@ -4,21 +4,14 @@ import MovieCard from './MovieCard'
 import { Container } from 'semantic-ui-react'
 
 type MoviesListProps = {
-  movies: Array<Object>,
-  onGoToMovieDetail: number => () => void
+  movies: Array<Object>
 }
 
 const MoviesList = (props: MoviesListProps) => {
   return (
     <Container className='movie-card-list'>
       <h1 className='title'>Películas populares</h1>
-      {props.movies.map(movie => (
-        <MovieCard
-          movie={movie}
-          onGoToMovieDetail={props.onGoToMovieDetail}
-          key={movie.id}
-        />
-      ))}
+      {props.movies.map(movie => <MovieCard movie={movie} key={movie.id} />)}
     </Container>
   )
 }
