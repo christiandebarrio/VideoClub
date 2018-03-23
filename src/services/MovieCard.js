@@ -6,7 +6,7 @@ import { getImageSrc } from '../modules/images/utils'
 import { formatMovieCardDate } from '../core/dateFormater'
 import { truncateText } from '../core/truncateText'
 
-type InitProps = { movie: Movie }
+type InitProps = { movie: Movie, history: { push: () => void } }
 
 const withMovieCardData = withProps((props: InitProps) => {
   const { poster_path, overview, vote_average, release_date } = props.movie
