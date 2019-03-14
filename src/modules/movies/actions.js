@@ -2,7 +2,6 @@
 import type { AsyncThunk } from '../../core/types'
 import type { Movies, MovieDetail, Credits } from './types'
 import { SET_MOVIES, SET_MOVIE_DETAIL } from './actionsTypes'
-import { API_URL, API_KEY } from '../../constants'
 
 const setMovies = (movies: Movies) => ({
   type: SET_MOVIES,
@@ -16,7 +15,11 @@ export const fetchPopularMovies = (): AsyncThunk => async (
   try {
     const languagePath = '&language=es-ES'
     const pagePath = '&page=1'
-    const popularMoviesPath = `${API_URL}/movie/popular?api_key=${API_KEY}${languagePath}${pagePath}`
+    const popularMoviesPath = `${
+      process.env.REACT_APP_API_URL
+    }/movie/popular?api_key=${
+      process.env.REACT_APP_API_KEY
+    }${languagePath}${pagePath}`
     const movies: Movies = await fetch(popularMoviesPath)
       .then(res => res.json())
       .then(json => json.results)
@@ -39,9 +42,13 @@ export const fetchMovie = (id: number): AsyncThunk => async (
 ) => {
   try {
     const languagePath = '&language=es-ES'
-    const moviePath = `${API_URL}/movie/${id}?api_key=${API_KEY}${languagePath}`
+    const moviePath = `${process.env.REACT_APP_API_URL}/movie/${id}?api_key=${
+      process.env.REACT_APP_API_KEY
+    }${languagePath}`
     const movie: MovieDetail = await fetch(moviePath).then(res => res.json())
-    const creditsPath = `${API_URL}/movie/${id}/credits?api_key=${API_KEY}`
+    const creditsPath = `${
+      process.env.REACT_APP_API_URL
+    }/movie/${id}/credits?api_key=${process.env.REACT_APP_API_KEY}`
     const credits: Credits = await fetch(creditsPath).then(res => res.json())
     movie.credits = credits
     dispatch(setMovieDetail(movie))
