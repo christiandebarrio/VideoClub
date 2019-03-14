@@ -4,7 +4,16 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 
 trigger:
-  - master
+  branches:
+    include:
+      - master
+      - develop
+
+pr:
+  branches:
+    include:
+      - master
+      - develop
 
 pool:
   vmImage: 'Ubuntu-16.04'
@@ -15,7 +24,27 @@ steps:
       versionSpec: '8.x'
     displayName: 'Install Node.js'
 
+  - script: yarn install
+    displayName: 'Install dependencies'
+
+  - script: yarn test --coverage
+    displayName: 'Run tests'
+
+  - task: Docker@1
+    displayName: 'Login to Christian Docker'
+    inputs:
+      command: login
+      containerregistrytype: Container Registry
+      dockerRegistryEndpoint: DockerChristian
+
   - script: |
-      yarn install
-      yarn build:pro
-    displayName: 'yarn install and build'
+      yarn build
+      yarn docker
+    displayName: 'Build and push Production Docker Image'
+    condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
+
+  - script: |
+      yarn build:dev
+      yarn docker:dev
+    displayName: 'Build and push Development Docker Image'
+    condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/develop'))
