@@ -1,0 +1,17 @@
+kind: pipeline
+name: default
+
+steps:
+  - name: frontend
+    image: node:9
+    commands:
+      - yarn
+      - yarn test
+
+trigger:
+  branch:
+    - master
+    - develop
+  event:
+    - push
+    - pull_request
