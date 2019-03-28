@@ -1,17 +1,17 @@
 // ™flow
 const monthsMap = {
-  1: { es: 'Enero' },
-  2: { es: 'Febrero' },
-  3: { es: 'Marzo' },
-  4: { es: 'Abril' },
-  5: { es: 'Mayo' },
-  6: { es: 'Junio' },
-  7: { es: 'Julio' },
-  8: { es: 'Agosto' },
-  9: { es: 'Septiembre' },
-  10: { es: 'Octubre' },
-  11: { es: 'Noviembre' },
-  12: { es: 'Diciembre}' }
+  0: { es: 'Enero' },
+  1: { es: 'Febrero' },
+  2: { es: 'Marzo' },
+  3: { es: 'Abril' },
+  4: { es: 'Mayo' },
+  5: { es: 'Junio' },
+  6: { es: 'Julio' },
+  7: { es: 'Agosto' },
+  8: { es: 'Septiembre' },
+  9: { es: 'Octubre' },
+  10: { es: 'Noviembre' },
+  11: { es: 'Diciembre}' }
 }
 
 type FormatMovieCardDate = ({
