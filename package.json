@@ -6,8 +6,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "build:dev": "env-cmd .env.development npm run build",
-    "docker": "make docker BUILD=pro",
-    "docker:dev": "make docker BUILD=dev",
+    "docker": "make docker BUILD=PROD",
+    "docker:dev": "make docker BUILD=DEV",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
